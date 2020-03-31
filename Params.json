@@ -1,0 +1,14 @@
+{
+    "prefix": "?",
+    "week": ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    "todayAliases": ["today", "auj", "aujourd'hui", "now"],
+    "nextAliases": ["next", "prochain", "demain"],
+    "edtAliases": ["edt"],
+    "compareAliases": ["compare", "c", "comp"],
+    "helpAliases": ["help"],
+    "agendaAliases" : ["agenda"],
+    "roleAliases" : ["role"],
+    "tutorat" : ["tutorat"],
+    "classe" : ["classe"],
+    "random" : ["random"]
+}
