@@ -35,7 +35,6 @@ class scanP {
                 res.on("end", () => {
 
                     var document = new JSDOM(rawData);
-                    var sortedData = [];
 
                     document.window.document.querySelectorAll(".Ligne").forEach(elem => {
 
@@ -85,11 +84,6 @@ class scanP {
 
             })
 
-            // console.log(time)
-            // console.log(nbStudentDispo);
-            // console.log(onDispo);
-            // console.log("=========");
-
             if (nbStudentDispo === this.studentList.length) {
 
                 if (!onDispo) {
@@ -131,12 +125,12 @@ class scanP {
 
     showDispos() {
 
-        var embededMsg = new this.params.Discord.RichEmbed();
+        var embededMsg = new this.params.Discord.MessageEmbed();
         var nbDispo = 0;
 
         this.dispo.forEach(dispo => {
 
-            if (nbDispo != 0) embededMsg.addBlankField(nbDispo % 2 === 0 ? false : true);
+            if (nbDispo != 0) embededMsg.addField('\u200b', '\u200b',nbDispo % 2 === 0 ? false : true);
 
             nbDispo++;
 
@@ -145,7 +139,7 @@ class scanP {
         })
 
         embededMsg.title = "Disponibilitée(s)";
-        embededMsg.color = 0xadbcdf;
+        embededMsg.color = 0xcb2a17;
         this.params.msg.channel.send(embededMsg);
 
     }

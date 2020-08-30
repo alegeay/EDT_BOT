@@ -10,5 +10,8 @@
     "roleAliases" : ["role"],
     "tutorat" : ["tutorat"],
     "classe" : ["classe"],
-    "random" : ["random"]
+    "random" : ["random"],
+    "club"   : ["club"],
+    "admin"   : ["admin"],
+    "cours" : ["cours"]
 }

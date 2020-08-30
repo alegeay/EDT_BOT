@@ -1,7 +1,7 @@
 module.exports = function (params) {
 
     var who = (params.args[0].includes(".") ? params.args[0] : params.args[1]);
-    var tDate = ['09/02/2019', '09/16/2019', '09/23/2019', '09/30/2019', '10/07/2019']
+    var tDate = ['09/02/2020', '09/16/2020', '09/23/2020', '09/30/2020', '10/07/2020']
     let i = 0;
   
     makeSynchronousRequest();

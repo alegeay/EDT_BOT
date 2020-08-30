@@ -3,26 +3,19 @@ const config = require("../config.json");
 
 var classe = params.args[0]
 
-
-
-
 var verif =  config.role.some( element => element.emoji === classe)
 
 if (verif) {
 
 var result = config.role.filter( role => role.emoji === classe); 
 
-var classe_list = params.msg.guild.roles.get(result[0].id).members.map(m=>m.user.id);
-
+var classe_list = params.msg.guild.roles.cache.get(result[0].id).members.map(m=>m.user.id);
 
 var rand = Math.random();
 
-var total_eleve = classe_list.length;
+var randindex = Math.floor(rand * classe_list.length);
 
-var randindex = Math.floor(rand * total_eleve);
-
-var random_eleve = classe_list[randindex];
-random_eleve = '<@' + random_eleve + '>';
+random_eleve = '<@' + classe_list[randindex] + '>';
 
 console.log(classe_list);
 
@@ -35,21 +28,12 @@ var phrase = ['Tiens Tiens Tiens ! Il semblerait que' + random_eleve + 'soit cho
             'Oh... '+ random_eleve + '\n https://media2.giphy.com/media/8vIFoKU8s4m4CBqCao/giphy.gif' 
 ]
 
-var rand2 = Math.random();
-
-var total_phrase = phrase.length;
-
-var randindex = Math.floor(rand2 * total_phrase);
-
-
-
+var randindex = Math.floor(Math.random() * phrase.length);
 params.msg.channel.send(phrase[randindex]);
+
 }
+
 else {
-
     params.msg.channel.send('Erreur : Classe incorrect');
-
-}
-
-
+ }
 }

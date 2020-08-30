@@ -27,7 +27,7 @@ module.exports = function(params) {
 
             var document = new params.JSDOM(rawData);
             var sortedData = [];
-            var embededMsg = new params.Discord.RichEmbed();
+            var embededMsg = new params.Discord.MessageEmbed();
             
             document.window.document.querySelectorAll(".Ligne").forEach(elem => {
 

@@ -12,7 +12,7 @@ module.exports = function (params) {
 
             var document = new params.JSDOM(rawData);
             var sortedData = [];
-            var embededMsg = new params.Discord.RichEmbed();
+            var embededMsg = new params.Discord.MessageEmbed();
             
             document.window.document.querySelectorAll(".Ligne").forEach(elem => {
 
@@ -27,7 +27,6 @@ module.exports = function (params) {
                 }
 
                 sortedData.push(mat);
-
                 embededMsg.addField(mat.matiere, "debut : " + mat.debut + " - " + "fin : " + mat.fin + "\n" + "salle : " + mat.salle + "\n" + "prof : " + mat.prof, true);
 
             });
@@ -35,7 +34,7 @@ module.exports = function (params) {
             console.log(sortedData);
 
             embededMsg.title = "Emploi du temps";
-            embededMsg.color = 0xadbcdf;
+            embededMsg.color = 0xcb2a17;
             params.msg.channel.send(embededMsg);
 
         });
