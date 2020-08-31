@@ -105,7 +105,10 @@ client.on('raw', event => {
                                     var member = server.members.cache.get(event.d.user_id);
                                     // Si le membre existe on lui attribue le role
                                     if (member) {
-                                        member.roles.add(club_match[0].role);
+                                        if(club_match[0]) {
+                                            member.roles.add(club_match[0].role);
+                                        }
+                                        
                                     }
                                 }
                             })
@@ -182,6 +185,8 @@ client.on('raw', event => {
                 if(botSettings.admin.includes(command)) admin(params);
                 else 
                 if(botSettings.cours.includes(command)) cours(params);
+                else
+                if(botSettings.roleAliases.includes(command)) role(params);
             }
 
         });
