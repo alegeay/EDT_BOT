@@ -51,7 +51,7 @@ module.exports = function(params) {
             console.log(sortedData);
 
             embededMsg.title = "Emploi du temps";
-            embededMsg.color = 0xadbcdf;
+            embededMsg.color = 0xcb2a17;
             params.msg.channel.send(embededMsg);
 
         });
