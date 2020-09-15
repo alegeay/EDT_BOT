@@ -16,7 +16,7 @@ module.exports = function (params) {
             
             document.window.document.querySelectorAll(".Ligne").forEach(elem => {
 
-                if (sortedData.length != 0) embededMsg.addBlankField(sortedData.length % 2 === 0 ? false : true);
+                if (sortedData.length != 0) embededMsg.addField('\u200b', '\u200b',sortedData.length % 2 === 0 ? false : true);
 
                 let mat = {
                     debut: elem.querySelector(".Debut").innerHTML,
